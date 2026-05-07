@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Rafif</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    color: cyan;
+}
+
+/* SECTION */
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 120px 20px;
+    animation: fade 0.8s ease;
+}
+
+.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+/* FOTO */
+.profile {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid cyan;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* PRESTASI MENU */
+.tabs button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: cyan;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background: white;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+}
+
+/* ANIMASI BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,255,0.15) 10%, transparent 10%);
+    background-size: 60px 60px;
+    animation: move 12s linear infinite;
+}
+
+@keyframes move {
+    from {transform: translate(0,0);}
+    to {transform: translate(-60px,-60px);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <button onclick="showPage('home')">Latar Belakang</button>
+    <button onclick="showPage('bio')">Biografi</button>
+    <button onclick="showPage('prestasi')">Prestasi</button>
+    <button onclick="showPage('motivasi')">Motivasi</button>
+</nav>
+
+<!-- HALAMAN 1 -->
+<section id="home" class="section active">
+<div class="container">
+
+<img src="WhatsApp Image 2026-05-07 at 12.32.52.jpeg" class="profile">
+
+
+<h1>Muhammad Rafif Akhdan</h1>
+
+<div class="card">
+<p>
+Muhammad Rafif Akhdan adalah seorang pelajar yang lahir di Medan pada 4 Juli 2009. Ia merupakan anak pertama dari dua bersaudara, putra dari Bapak Derri Mahrizal, S.T., S.Pd dan Ibu Tri Wahyuani Jamman, S.Pd.
+<br><br>
+Sejak kecil, ia telah diperkenalkan dengan dunia matematika, yang kemudian berkembang menjadi minat utama dalam perjalanan akademiknya. Ketekunan dan konsistensi menjadikannya sebagai siswa yang berprestasi.
+<br><br>
+Riwayat pendidikan dimulai dari SD Negeri 1 Tualang Cut, dilanjutkan ke SMP Negeri 2 Karang Baru, dan saat ini menempuh pendidikan di SMA Negeri Unggul Aceh Timur.
+<br><br>
+Selain unggul secara akademik, ia juga aktif dalam olahraga seperti sepak bola dan renang sebagai bentuk keseimbangan hidup.
+<br><br>
+Dengan semangat dan visi yang jelas, Rafif bercita-cita menjadi seorang dosen matematika dan berkontribusi dalam dunia pendidikan.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- HALAMAN 2 -->
+<section id="bio" class="section">
+<div class="container">
+
+<h2>Biografi</h2>
+
+<div class="card">
+<p><b>Nama:</b> Muhammad Rafif Akhdan</p>
+<p><b>TTL:</b> Medan, 4 Juli 2009</p>
+<p><b>Alamat:</b> Dusun Masjid, Desa Sapta Marga, Aceh Tamiang</p>
+<p><b>Jenis Kelamin:</b> Laki-laki</p>
+<p><b>Email:</b> rafifunggul20@gmail.com</p>
+<p><b>Agama:</b> Islam</p>
+<p><b>Hobi:</b> Sepak bola & renang</p>
+<p><b>Cita-cita:</b> Dosen Matematika</p>
+</div>
+
+</div>
+</section>
+
+<!-- HALAMAN 3 -->
+<section id="prestasi" class="section">
+<div class="container">
+
+<h2>Prestasi Akademik & Non-Akademik</h2>
+
+<div class="tabs">
+    <button onclick="showPrestasi('sd')">SD</button>
+    <button onclick="showPrestasi('smp')">SMP</button>
+    <button onclick="showPrestasi('sma')">SMA</button>
+</div>
+
+<div id="sd" class="card prestasi">
+<ul>
+<li>Juara 1 Umum SD Negeri 1 Tualang Cut</li>
+<li>Juara 1 OSN Matematika tingkat Kecamatan</li>
+<li>Juara 1 O2SN Pencak Silat tingkat Kecamatan</li>
+</ul>
+</div>
+
+<div id="smp" class="card prestasi" style="display:none;">
+<ul>
+<li>Juara 1 Umum SMP Negeri 2 Karang Baru</li>
+<li>Juara 1 OSN Matematika tingkat Kabupaten</li>
+<li>Juara 2 Hitung Cepat LBFT USK</li>
+<li>Juara 2 Hitung Cepat MUQ FAIR</li>
+<li>Juara 2 Hitung Cepat UNSAM</li>
+</ul>
+</div>
+
+<div id="sma" class="card prestasi" style="display:none;">
+<ul>
+<li>Juara 1 Umum SMAN Unggul Aceh Timur</li>
+<li>Juara 1 Duta Sadar Hukum Kabupaten Aceh Timur</li>
+<li>Juara 1 Duta Kamtibmas Kabupaten</li>
+<li>Duta Bea Cukai Langsa</li>
+<li>Juara 2 Clash of Customs Bea Cukai Langsa</li>
+<li>Duta Siswa Kebudayaan Aceh</li>
+<li>Duta Pelajar Anti Narkoba Aceh</li>
+<li>Juara 2 Karya Tulis Ilmiah tingkat Kabupaten</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- HALAMAN 4 -->
+<section id="motivasi" class="section">
+<div class="container">
+
+<h2>Kata Motivasi</h2>
+
+<div class="card">
+<h3>
+"Percaya diri adalah keberanian untuk tetap melangkah, bahkan ketika rasa takut masih menyertai."
+</h3>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div>📷 IG: m.rafif_akhdan</div>
+<div>💬 WA: 081374784410</div>
+</footer>
+
+<script>
+function showPage(id){
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function showPrestasi(id){
+    document.querySelectorAll('.prestasi').forEach(p=>p.style.display='none');
+    document.getElementById(id).style.display='block';
+}
+</script>
+
+</body>
+</html>
